@@ -11,16 +11,22 @@ def get_num_hexagons() -> int:
     the number of hexagons as an integer.
     :return color:
     '''
+    #display the color selection header
     print(ru_local.COLOR_TITLE)
+
+    #flag for detecting the first input
     t = True
 
+    #Infinite cycle for repeated request in case of incorrect input
     while True:
         try:
+            #NUMBER_INPUT for the first input, and INPUT_AGAIN for the second input
             if t == True:
                 number = int(input(ru_local.NUMBER_INPUT))
             else:
                 number = int(input(ru_local.INPUT_AGAIN))
             
+            #Check that the number is in the acceptable range
             if number >= 4 and number <= 20:
                 break
             else:
@@ -40,16 +46,22 @@ def get_color_choice() -> str:
     After the last correct user input, the function returns the color name string.
     :return color:
     '''
+    #display the number selection header
     print(ru_local.COLOR_TITLE)
+
+    #flag for detecting the first input
     t = True
 
+    #Infinite cycle for repeated request in case of incorrect input
     while True:
         try:
+            #COLOR_INPUT for the first input, and INPUT_AGAIN for the second input
             if t == True:
                 color_index = int(input(ru_local.COLOR_INPUT))
             else:
                 color_index = int(input(ru_local.INPUT_AGAIN))
-
+            
+            #Getting the color from the list by index
             color = const.COLOR[color_index - 1]
             break
 
@@ -84,7 +96,7 @@ def draw_hexagon(x: int, y: int, side_len: int, color: str) -> None:
 
 def draw_hexagons(q: int, first_color: str, second_color: str) -> None:
     '''
-        Two colors to color
+    Two colors to color
     Number (N) of hexagons in one row (4 to 20)
     500x500 pixel image
     Alternating colors in each row
