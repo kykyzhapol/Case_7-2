@@ -127,13 +127,17 @@ def draw_hexagons(q: int, first_color: str, second_color: str) -> None:
     for numb_horiz in range(q):
         for numb_vert in range(q):
             #Condition for checking a row.
-            #Depending on whether the row is even, the row should be shifted to the left or not.
+            #Depending on whether the row is even,
+            #the row should be shifted to the left or not.
             if numb_horiz%2 != 0:
-                x, y = -250 + (d * numb_vert), 250 - (l/2) - (numb_horiz * 1.5 * l)
+                x = -250 + (d * numb_vert)
+                y = 250 - (l/2) - (numb_horiz * 1.5 * l)
             else:
-                x, y = -250 + d_2 + (d * numb_vert), 250 - (l/2) - (numb_horiz * 1.5 * l)
+                x = -250 + d_2 + (d * numb_vert)
+                y = 250 - (l/2) - (numb_horiz * 1.5 * l)
 
-            #Condition for choosing the color of hexes so that there is a diagonal coloring. 
+            #Condition for choosing the color 
+            #of hexes so that there is a diagonal coloring. 
             #Group in pairs rows and watch on ewen.
             if (numb_horiz//2)%2 != 0:
                 if numb_vert%2 != 0:
